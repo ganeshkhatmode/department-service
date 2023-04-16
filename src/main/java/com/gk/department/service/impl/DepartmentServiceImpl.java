@@ -4,22 +4,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gk.department.model.Department;
+import com.gk.department.repository.DepartmentRepository;
 import com.gk.department.service.DepartmentService;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
 
 	@Autowired
-	private DepartmentService departmentService;
+	private DepartmentRepository departmentRepository;
 	
 	public Department save(Department department) {
 		
-		return departmentService.save(department);
+		return departmentRepository.save(department);
 	}
 
 	public Department findByDepartmentId(long departmentId) {
 		
-		return departmentService.findByDepartmentId(departmentId);
+		return departmentRepository.findById(departmentId).get();
 	}
 
 }

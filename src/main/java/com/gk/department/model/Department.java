@@ -11,6 +11,12 @@ public class Department {
 	private String name;
 	private String code;
 	private String address;
+	
+	
+	public Department() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public long getId() {
 		return id;
 	}
